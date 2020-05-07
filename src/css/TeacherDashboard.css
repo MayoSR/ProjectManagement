@@ -1,0 +1,35 @@
+.box-container{
+    display: flex;
+}
+
+#left-nav{
+    width:16%;
+}
+
+.format-typography{
+    background: #3f51b5;
+    color:white !important;
+    padding:10px 20px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.breadcrumbs{
+    background: #3f51b5;
+    color:white !important;
+    padding:10px 20px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    cursor: pointer;
+}
+
+.paper-margin{
+    border-radius: 4px;
+    margin:20px;
+    width:100%;
+}
+
+.list-items{
+    padding:20px;
+    cursor: pointer;
+}
