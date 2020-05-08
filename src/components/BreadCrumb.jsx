@@ -15,74 +15,113 @@ class BreadCrumb extends React.Component {
         this.state = {
             subjects: ["Compiler Design", "Web Development", "Machine Learning"],
             selected: false,
-            currentSem : "Semester",
-            currentSubject : "Subject",
+            assignments: false,
+            currentSem: "Semester",
+            currentSubject: "Subject",
         };
     }
 
-    setSem = (e) =>{
-        this.setState({selected:true,currentSem:e.target.textContent})
+    setSem = (e) => {
+        this.setState({ selected: true, currentSem: e.target.textContent })
     }
 
-    unsetSem = (e) =>{
-        this.setState({selected:false,currentSem:"Semester"})
+    unsetSem = (e) => {
+        this.setState({ selected: false, assignment: false, currentSem: "Semester" })
     }
 
-    setSubject = (e) =>{
-        this.setState({currentSubject:e.target.textContent})
+    unsetSubject = (e) => {
+        this.setState({assignment: false, currentSubject: "Subject" })
+    }
+
+    setSubject = (e) => {
+        this.setState({ assignment: true, currentSubject: e.target.textContent })
     }
 
     render() {
-        const { currentSem,currentSubject,subjects,selected } = this.state
-        return (
-            <Paper elevation={3} className="paper-margin" fullWidth>
-                <Breadcrumbs aria-label="breadcrumb" className="breadcrumbs">
-                    <Link color="inherit" onClick={this.unsetSem}>
-                        {currentSem}
-                    </Link>
-                    {selected && 
-                        <Link color="inherit">
-                            {currentSubject}
+        const { assignment, currentSem, currentSubject, subjects, selected } = this.state
+        if (!assignment) {
+            return (
+                <Paper elevation={3} className="paper-margin" fullWidth>
+                    <Breadcrumbs aria-label="breadcrumb" className="breadcrumbs">
+                        <Link color="inherit" onClick={this.unsetSem}>
+                            {currentSem}
                         </Link>
+                        {selected &&
+                            <Link color="inherit" onClick={this.unsetSubject}>
+                                {currentSubject}
+                            </Link>
+                        }
+                    </Breadcrumbs>
+
+                    {!selected ?
+                        <List className="list-items">
+                            {[1, 2, 3, 4, 5, 6, 7, 8].map((value) => {
+                                return (
+                                    <ListItem
+                                        onClick={this.setSem}
+                                    >
+                                        <ListItemIcon>
+                                            <FolderIcon />
+                                        </ListItemIcon>
+                                        <ListItemText
+                                            primary={"Semester " + value}
+                                        />
+                                    </ListItem>
+                                )
+                            })}
+                        </List>
+                        :
+                        <List className="list-items">
+                            {subjects.map((value) => {
+                                return (
+                                    <ListItem
+                                        onClick={this.setSubject}
+                                    >
+                                        <ListItemIcon>
+                                            <FolderIcon />
+                                        </ListItemIcon>
+                                        <ListItemText
+                                            primary={value}
+                                        />
+                                    </ListItem>
+                                )
+                            })}
+                        </List>
                     }
-                </Breadcrumbs>
-                {!selected ?
+                </Paper>
+            );
+        }
+        else {
+            return (
+                <Paper elevation={3} className="paper-margin" fullWidth>
+                    <Breadcrumbs aria-label="breadcrumb" className="breadcrumbs">
+                        <Link color="inherit" onClick={this.unsetSem}>
+                            {currentSem}
+                        </Link>
+                        {selected &&
+                            <Link color="inherit" onClick={this.unsetSubject}>
+                                {currentSubject}
+                            </Link>
+                        }
+                    </Breadcrumbs>
                     <List className="list-items">
                         {[1, 2, 3, 4, 5, 6, 7, 8].map((value) => {
                             return (
                                 <ListItem
-                                    onClick={this.setSem}
                                 >
                                     <ListItemIcon>
                                         <FolderIcon />
                                     </ListItemIcon>
                                     <ListItemText
-                                        primary={"Semester " + value}
+                                        primary={"Assignment "+value}
                                     />
                                 </ListItem>
                             )
                         })}
                     </List>
-                    :
-                    <List className="list-items">
-                        {subjects.map((value) => {
-                            return (
-                                <ListItem
-                                    onClick={this.setSubject}
-                                >
-                                    <ListItemIcon>
-                                        <FolderIcon />
-                                    </ListItemIcon>
-                                    <ListItemText
-                                        primary={value}
-                                    />
-                                </ListItem>
-                            )
-                        })}
-                    </List>
-                }
-            </Paper>
-        );
+                </Paper>
+            );
+        }
     }
 }
 

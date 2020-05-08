@@ -1,0 +1,12 @@
+#project-title{
+    display: flex;
+    justify-content: space-between;
+}
+
+#project-data-container{
+    padding:20px;
+}
+
+#project-data-container > div{
+    margin:10px 0px;
+}

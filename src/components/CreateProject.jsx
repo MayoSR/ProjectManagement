@@ -15,7 +15,7 @@ class CreateProject extends React.Component {
 
     render() {
         return (
-            <Button fullWidth variant="contained" color="primary" style={{marginLeft:"20px"}}>
+            <Button fullWidth variant="contained" color="primary" className="paper-margin">
                 Create a Project
             </Button>
         )

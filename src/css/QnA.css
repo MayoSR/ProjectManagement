@@ -1,0 +1,24 @@
+#doubt-container{
+    padding:20px;
+}
+
+.qna-box{
+    margin-bottom:20px;
+}
+
+.question{
+    margin-bottom: 10px;
+}
+
+.answer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.answer > *:first-child{
+    flex:0.89;
+}
+
+.answer > *:last-child{
+    flex:0.09;
+}
