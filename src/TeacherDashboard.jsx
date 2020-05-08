@@ -5,6 +5,8 @@ import CreateProject from './components/CreateProject'
 import RecentProjects from './components/RecentProjects'
 import OngoingProjects from './components/WorkBench'
 import DoubtClarification from './components/DoubtClarification'
+import AssignmentCompletion from './components/AssignmentCompletion'
+import ProgressCharts from './components/ProgressCharts'
 
 class TeacherDashboard extends Component {
     render() {
@@ -18,6 +20,10 @@ class TeacherDashboard extends Component {
                 <div className="nav-spacer" id="mid-nav">
                     <OngoingProjects />
                     <DoubtClarification />
+                </div>
+                <div className="nav-spacer" id="right-nav">
+                    <AssignmentCompletion />
+                    <ProgressCharts />
                 </div>
             </div>
         )

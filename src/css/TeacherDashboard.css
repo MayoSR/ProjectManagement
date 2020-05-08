@@ -1,17 +1,19 @@
 .box-container{
     display: flex;
+    padding:0px 30px;
+    justify-content: space-between;
 }
 
 #left-nav{
-    max-width:17%
+    flex:0.16;
 }
 
 #mid-nav{
-    max-width:50%;
+    flex:0.47;
 }
 
-.box-container > div{
-    margin-left:30px;
+#right-nav{
+    flex:0.33;
 }
 
 .format-typography{

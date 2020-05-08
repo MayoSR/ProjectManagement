@@ -30,6 +30,11 @@ export default class ProjectData extends Component {
                         Team Size : 3-4
                     </Typography>
                 </div>
+                <div id="project-attachments">
+                    <Typography variant="subtitle2">
+                        Attachments : compilerdesign.pdf
+                    </Typography>
+                </div>
                 <div id="project-desc">
                     <Typography variant="subtitle2">
                         Description :
