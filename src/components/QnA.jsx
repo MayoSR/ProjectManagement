@@ -9,7 +9,7 @@ export default class QnA extends Component {
     render() {
         return (
             <div id="doubt-container">
-                {[1, 2].map((val) => {
+                {[1, 2, 3].map((val) => {
                     return (
                         <div className="qna-box">
                             <div className="question">

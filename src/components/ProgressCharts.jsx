@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
+import React, { Component } from 'react';
 import { Line } from 'react-chartjs-2';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
 
 export default class ProgressCharts extends Component {
     constructor(props) {
@@ -13,7 +13,7 @@ export default class ProgressCharts extends Component {
                     'Week 9', 'Week 10'],
                 datasets: [
                     {
-                        label: 'Completed',
+                        label: 'Completion percentage',
                         fill: false,
                         lineTension: 0.5,
                         backgroundColor: '#4caf50',
@@ -29,19 +29,21 @@ export default class ProgressCharts extends Component {
     render() {
 
         return (
-            <Paper elevation={3} className="paper-margin" fullWidth>
+
+            <Paper elevation={3} className="paper-margin">
                 <Typography variant="subtitle1" className="format-typography">
-                    {"Progress Report"}
+                    Progress Report
                 </Typography>
                 <div className="inner-pad">
                     <Line
+                        height={250}
                         data={this.state.data}
                         options={{
-                            title: {
-                                display: true,
-                                text: 'Progress per week',
-                                fontSize: 20
-                            },
+                            bezierCurve: false, //remove curves from your plot
+                            scaleShowLabels: false, //remove labels
+                            tooltipEvents: [], //remove trigger from tooltips so they will'nt be show
+                            pointDot: false, //remove the points markers
+                            scaleShowGridLines: true //set to false to remove the grids background
                         }}
                     />
                 </div>

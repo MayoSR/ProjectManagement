@@ -1,8 +1,6 @@
-import React, { Component } from 'react'
-import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
-import "../css/AssignmentCompletion.css"
+import React, { Component } from 'react';
 import { Doughnut } from 'react-chartjs-2';
+import "../css/AssignmentCompletion.css";
 
 export default class AssignmentCompletion extends Component {
 
@@ -16,7 +14,7 @@ export default class AssignmentCompletion extends Component {
                 ],
                 datasets: [
                     {
-                        data: [300, 100],
+                        data: [250, 150],
                         backgroundColor: [
                             "#4caf50",
                             "#f44336"
@@ -27,23 +25,19 @@ export default class AssignmentCompletion extends Component {
                         ]
                     }]
             },
-            options : {        
+            options: {
                 cutoutPercentage: 80,
-           }
+                responsive: false,
+            }
         }
     }
 
     render() {
 
         return (
-            <Paper elevation={3} className="paper-margin" fullWidth>
-                <Typography variant="subtitle1" className="format-typography">
-                    {"Submission Report"}
-                </Typography>
-                <div className="inner-pad">
-                    <Doughnut id="doughtnut-chart" data={this.state.data} options = {this.state.options} />
-                </div>
-            </Paper>
+            <div className="inner-pad">
+                <Doughnut id="doughtnut-chart" data={this.state.data} options={this.state.options} />
+            </div>
         )
     }
 }

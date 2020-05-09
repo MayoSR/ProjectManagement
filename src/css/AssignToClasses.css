@@ -1,0 +1,48 @@
+.label-header{
+    display: flex;
+    justify-content: space-between;
+    padding:10px 20px 0px 20px;
+}
+
+#submit-1{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column-reverse;
+}
+
+#submit-2{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column-reverse;
+}
+
+.color-box{
+    width:50px;
+    height:10px;
+}
+
+#color-2{
+    background-color: #FF6384;
+}
+
+#color-1{
+    background-color: #36A2EB;
+}
+
+#assign-class-btn{
+    margin:20px;
+}
+
+.btn-center{
+    display: flex;
+    width:100%;
+    padding:20px;
+    justify-content: center;
+}
+
+.doughnut-class canvas{
+    height:30px !important;
+    width:30px !important;
+}

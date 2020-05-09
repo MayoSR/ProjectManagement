@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import "./css/TeacherDashboard.css"
-import BreadCrumb from './components/BreadCrumb'
+import AssignmentNav from './components/AssignmentNav'
 import CreateProject from './components/CreateProject'
-import RecentProjects from './components/RecentProjects'
-import OngoingProjects from './components/WorkBench'
-import DoubtClarification from './components/DoubtClarification'
-import AssignmentCompletion from './components/AssignmentCompletion'
+import InnerNavbar from './components/InnerNavbar'
+import AssignToClasses from './components/AssignToClasses'
 import ProgressCharts from './components/ProgressCharts'
 
 class TeacherDashboard extends Component {
@@ -13,17 +11,15 @@ class TeacherDashboard extends Component {
         return (
             <div className="box-container">
                 <div className="nav-spacer" id="left-nav">
-                    <BreadCrumb />
+                    <AssignmentNav />
                     <CreateProject />
-                    <RecentProjects />
+                    <ProgressCharts />
                 </div>
-                <div className="nav-spacer" id="mid-nav">
-                    <OngoingProjects />
-                    <DoubtClarification />
+                <div className="nav-spacer" id="mid-nav-1">
+                    <InnerNavbar />
                 </div>
                 <div className="nav-spacer" id="right-nav">
-                    <AssignmentCompletion />
-                    <ProgressCharts />
+                    <AssignToClasses />
                 </div>
             </div>
         )
