@@ -13,13 +13,28 @@ export default class ProgressCharts extends Component {
                     'Week 9', 'Week 10'],
                 datasets: [
                     {
-                        label: 'Completion percentage',
                         fill: false,
                         lineTension: 0.5,
-                        backgroundColor: '#4caf50',
-                        borderColor: '#4caf50',
+                        backgroundColor: 'rgba(76, 175, 80,1)',
+                        borderColor: 'rgba(76, 175, 80,1)',
                         borderWidth: 2,
                         data: [10, 15, 20, 35, 40, 55, 63, 75, 98, 100]
+                    },
+                    {
+                        fill: false,
+                        lineTension: 0.5,
+                        backgroundColor: 'rgba(54, 162, 235,1)',
+                        borderColor: 'rgba(54, 162, 235,1)',
+                        borderWidth: 2,
+                        data: [8, 10, 14, 17, 22, 45, 67, 77, 79, 100]
+                    },
+                    {
+                        fill: false,
+                        lineTension: 0.5,
+                        backgroundColor: 'rgba(255, 99, 132,1)',
+                        borderColor: 'rgba(255, 99, 132,1)',
+                        borderWidth: 2,
+                        data: [20, 40, 60, 75, 80, 86, 88, 90, 96, 100]
                     }
                 ]
             }
@@ -39,11 +54,24 @@ export default class ProgressCharts extends Component {
                         height={250}
                         data={this.state.data}
                         options={{
-                            bezierCurve: false, //remove curves from your plot
-                            scaleShowLabels: false, //remove labels
-                            tooltipEvents: [], //remove trigger from tooltips so they will'nt be show
-                            pointDot: false, //remove the points markers
-                            scaleShowGridLines: true //set to false to remove the grids background
+                            bezierCurve: false,
+                            scaleShowLabels: false,
+                            tooltipEvents: [],
+                            pointDot: false,
+                            scaleShowGridLines: true,
+                            scales: {
+                                yAxes: [{
+                                    ticks: {
+                                        min: 0,
+                                        max: 100,
+                                        stepSize: 20
+                                    }
+                                }],
+                            },
+                            legend: {
+                                display: false
+                            },
+
                         }}
                     />
                 </div>

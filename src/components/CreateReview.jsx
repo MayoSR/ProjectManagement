@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 
-class CreateProject extends React.Component {
+class CreateReview extends React.Component {
 
     constructor(props) {
         super(props);
@@ -14,10 +14,10 @@ class CreateProject extends React.Component {
     render() {
         return (
             <Button fullWidth variant="contained" color="primary" className="paper-margin">
-                Create a Project
+                Schedule a review
             </Button>
         )
     }
 }
 
-export default CreateProject
+export default CreateReview

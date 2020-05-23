@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
-import "./css/TeacherDashboard.css"
 import AssignmentNav from './components/AssignmentNav'
-import CreateProject from './components/CreateProject'
-import InnerNavbar from './components/InnerNavbar'
-import AssignToClasses from './components/AssignToClasses'
+import CreateReview from './components/CreateReview'
 import ProgressCharts from './components/ProgressCharts'
+// import TopBottomProgress from './components/TopBottomProgress'
+// import AssignToClasses from './components/AssignToClasses'
+import ProjectData from './components/ProjectData'
+import QnA from './components/QnA'
+import ReviewDates from './components/ReviewDates'
+import TableComponent from './components/TableComponent'
+import "./css/TeacherDashboard.css"
 
 class TeacherDashboard extends Component {
     render() {
@@ -12,14 +16,21 @@ class TeacherDashboard extends Component {
             <div className="box-container">
                 <div className="nav-spacer" id="left-nav">
                     <AssignmentNav />
-                    <CreateProject />
-                    <ProgressCharts />
+                    <CreateReview />
+                    <TableComponent />
                 </div>
                 <div className="nav-spacer" id="mid-nav-1">
-                    <InnerNavbar />
+                    {/* <InnerNavbar />
+                    <div className="nav-spacer" id="sub-mid-nav">
+                    <TopBottomProgress />
+                </div> */}
+                    <ProjectData />
+                    <QnA />
                 </div>
                 <div className="nav-spacer" id="right-nav">
-                    <AssignToClasses />
+                    <ProgressCharts />
+                    {/* <AssignToClasses /> */}
+                    <ReviewDates />
                 </div>
             </div>
         )

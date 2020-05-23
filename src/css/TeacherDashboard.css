@@ -60,3 +60,15 @@
 .inner-pad{
     padding:10px;
 }
+
+#pagination-container .MultiPagination-spacer{
+    flex:none;
+}
+
+#pagination-container .MuiToolbar-root > p:first-of-type{
+    display: none;
+}
+
+#pagination-container .MuiTablePagination-input{
+    display: none;
+}
