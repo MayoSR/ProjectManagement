@@ -25,11 +25,6 @@
 }
 
 .breadcrumbs{
-    background: #3f51b5;
-    color:white !important;
-    padding:10px 20px;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
     cursor: pointer;
 }
 
@@ -71,4 +66,21 @@
 
 #pagination-container .MuiTablePagination-input{
     display: none;
+}
+
+.alert-pad{
+    margin:20px;
+}
+
+#sub-mid-nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+#sub-mid-nav > div:first-of-type{
+    flex:0.57;
+}
+
+#sub-mid-nav > div:last-of-type{
+    flex:0.40;
 }

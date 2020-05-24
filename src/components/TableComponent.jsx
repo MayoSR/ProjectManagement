@@ -9,37 +9,38 @@ import TableHead from '@material-ui/core/TableHead';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import Typography from '@material-ui/core/Typography';
+import LinearProgress from '@material-ui/core/LinearProgress';
 
 const columns = [
   { id: 'name', label: 'Name', minWidth: 170 },
   {
-    id: 'density',
-    label: 'Density',
+    id: 'progress',
+    label: 'Progress',
     align: 'right',
     format: (value) => value.toFixed(2),
   },
 ];
 
-function createData(name, density) {
-  return { name, density };
+function createData(name, progress) {
+  return { name, progress };
 }
 
 const rows = [
-  createData('India', 3287263),
-  createData('China', 9596961),
-  createData('Italy',  301340),
-  createData('United States', 9833520),
-  createData('Canada', 9984670),
-  createData('Australia', 7692024),
-  createData('Germany', 357578),
-  createData('Ireland',70273),
-  createData('Mexico', 1972550),
-  createData('Japan',377973),
-  createData('France', 640679),
-  createData('United Kingdom',242495),
-  createData('Russia',17098246),
-  createData('Nigeria', 923768),
-  createData('Brazil',8515767),
+  createData('Team 1', 32),
+  createData('Team 2', 95),
+  createData('Team 3', 30),
+  createData('Team 4', 98),
+  createData('Team 5', 99),
+  createData('Team 6', 76),
+  createData('Team 7', 35),
+  createData('Team 8', 70),
+  createData('Team 9', 19),
+  createData('Team 10', 37),
+  createData('Team 11', 64),
+  createData('Team 12', 24),
+  createData('Team 13', 17),
+  createData('Team 14', 92),
+  createData('Team 15', 85),
 ];
 
 const useStyles = makeStyles({
@@ -89,14 +90,17 @@ export default function StickyHeadTable() {
             {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
               return (
                 <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
-                  {columns.map((column) => {
-                    const value = row[column.id];
-                    return (
-                      <TableCell key={column.id} align={column.align}>
-                        {column.format && typeof value === 'number' ? column.format(value) : value}
-                      </TableCell>
-                    );
-                  })}
+                  <TableCell>
+                    {row.name}
+                  </TableCell>
+                  <TableCell>
+                    <LinearProgress
+                      className={classes.margin}
+                      variant="determinate"
+                      color="secondary"
+                      value={row.progress}
+                    />
+                  </TableCell>
                 </TableRow>
               );
             })}

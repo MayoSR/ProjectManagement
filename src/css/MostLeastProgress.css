@@ -1,9 +1,0 @@
-
-#sub-mid-nav{
-    display: flex;
-    justify-content: space-between;
-}
-
-#sub-mid-nav > div{
-    flex:0.48;
-}

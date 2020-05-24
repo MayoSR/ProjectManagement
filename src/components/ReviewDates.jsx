@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
 import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import React, { Component } from 'react';
+import CustomizedDialogs from './ReviewContent';
 
 function createData(name, date) {
     return { name, date };
@@ -35,12 +34,6 @@ export default class ReviewDates extends Component {
                 </Typography>
                 <TableContainer component={Paper}>
                     <Table aria-label="simple table">
-                        <TableHead>
-                            <TableRow>
-                                <TableCell>Review Number</TableCell>
-                                <TableCell align="right"></TableCell>
-                            </TableRow>
-                        </TableHead>
                         <TableBody>
                             {rows.map((row) => (
                                 <TableRow key={row.name}>
@@ -53,9 +46,7 @@ export default class ReviewDates extends Component {
                                         </Typography>
                                     </TableCell>
                                     <TableCell align="right">
-                                        <Button variant="contained" size="small" color="primary">
-                                            View
-                                        </Button>
+                                        <CustomizedDialogs />
                                     </TableCell>
                                 </TableRow>
                             ))}

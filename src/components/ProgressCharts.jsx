@@ -18,7 +18,7 @@ export default class ProgressCharts extends Component {
                         backgroundColor: 'rgba(76, 175, 80,1)',
                         borderColor: 'rgba(76, 175, 80,1)',
                         borderWidth: 2,
-                        data: [10, 15, 20, 35, 40, 55, 63, 75, 98, 100]
+                        data: [0, 10, 15, 20, 35, 40, 55, 58, 58]
                     },
                     {
                         fill: false,
@@ -26,7 +26,7 @@ export default class ProgressCharts extends Component {
                         backgroundColor: 'rgba(54, 162, 235,1)',
                         borderColor: 'rgba(54, 162, 235,1)',
                         borderWidth: 2,
-                        data: [8, 10, 14, 17, 22, 45, 67, 77, 79, 100]
+                        data: [0, 8, 10, 14, 17, 22, 45, 67, 77]
                     },
                     {
                         fill: false,
@@ -34,7 +34,7 @@ export default class ProgressCharts extends Component {
                         backgroundColor: 'rgba(255, 99, 132,1)',
                         borderColor: 'rgba(255, 99, 132,1)',
                         borderWidth: 2,
-                        data: [20, 40, 60, 75, 80, 86, 88, 90, 96, 100]
+                        data: [0, 20, 33, 39, 45, 45, 49, 55, 65]
                     }
                 ]
             }
@@ -51,7 +51,8 @@ export default class ProgressCharts extends Component {
                 </Typography>
                 <div className="inner-pad">
                     <Line
-                        height={250}
+                        height={200}
+                        width={250}
                         data={this.state.data}
                         options={{
                             bezierCurve: false,

@@ -15,7 +15,7 @@ export default class ProjectData extends Component {
                 </Typography>
                 <div id="project-data-container">
                     <div id="project-title">
-                        <Typography variant="h5">
+                        <Typography variant="subtitle1">
                             Project Name
                     </Typography>
                         <div id="project-dets-container">

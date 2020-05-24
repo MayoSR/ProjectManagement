@@ -6,7 +6,7 @@ export default class BreadCrumb extends Component {
 
     render() {
         return (
-            <Breadcrumbs aria-label="breadcrumb" className="breadcrumbs">
+            <Breadcrumbs aria-label="breadcrumb" className="breadcrumbs format-typography">
                 <Link color="inherit" onClick={this.props.unsetSemProp}>
                     {this.props.currSem}
                 </Link>

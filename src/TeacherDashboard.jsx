@@ -9,6 +9,7 @@ import QnA from './components/QnA'
 import ReviewDates from './components/ReviewDates'
 import TableComponent from './components/TableComponent'
 import "./css/TeacherDashboard.css"
+import Reminders from './components/Reminders'
 
 class TeacherDashboard extends Component {
     render() {
@@ -17,7 +18,7 @@ class TeacherDashboard extends Component {
                 <div className="nav-spacer" id="left-nav">
                     <AssignmentNav />
                     <CreateReview />
-                    <TableComponent />
+                    <Reminders />
                 </div>
                 <div className="nav-spacer" id="mid-nav-1">
                     {/* <InnerNavbar />
@@ -25,12 +26,15 @@ class TeacherDashboard extends Component {
                     <TopBottomProgress />
                 </div> */}
                     <ProjectData />
-                    <QnA />
+                    <div className="nav-spacer" id="sub-mid-nav">
+                        <QnA />
+                        <ProgressCharts />
+                    </div>
                 </div>
                 <div className="nav-spacer" id="right-nav">
-                    <ProgressCharts />
-                    {/* <AssignToClasses /> */}
                     <ReviewDates />
+                    <TableComponent />
+                    {/* <AssignToClasses /> */}
                 </div>
             </div>
         )
